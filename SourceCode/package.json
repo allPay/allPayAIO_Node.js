@@ -1,10 +1,10 @@
 {
   "name": "allpay",
-  "author": "Calvert Yang",
+  "author": "allpay",
   "version": "1.0.0",
   "description": "歐付寶全方位金流 SDK",
   "contributors": [
-    "Calvert Yang"
+    "allpay"
   ],
   "keywords": [
     "allpay"
