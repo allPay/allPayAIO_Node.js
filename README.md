@@ -1,4 +1,4 @@
-## allPay歐付寶 全方位(All In One)金流介接 Node.js版
+## allPay歐付寶 全方位(All In One)金流介接 Node.js版(Beta僅供參考)
 
 ### 1. 介紹
 
