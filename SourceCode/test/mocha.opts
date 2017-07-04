@@ -1,5 +1,0 @@
---reporter spec
---recursive
---slow 2000
---require test/helper.js
---timeout 10000
