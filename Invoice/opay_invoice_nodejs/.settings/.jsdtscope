@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="node_modules/elementtree/lib/parsers/|node_modules/ieee754/test/|node_modules/buffer/test/|node_modules/xmldoc/|node_modules/base64-js/test/|node_modules/xmldoc/node_modules/sax/lib/|node_modules/elementtree/lib/|node_modules/iconv-lite/encodings/|node_modules/sax/lib/|node_modules/xmldoc/lib/|node_modules/ieee754/|lib/ecpay_invoice/|node_modules/xmldoc/examples/|node_modules/xmlbuilder/lib/|node_modules/xmldoc/test/|node_modules/buffer/test/node/|node_modules/lodash/fp/|node_modules/iconv-lite/lib/|node_modules/elementtree/tests/|node_modules/base64-js/|node_modules/xml2js/lib/|node_modules/lodash/|node_modules/buffer/|lib/" kind="src" path=""/>
+	<classpathentry excluding="ecpay_invoice/" kind="src" path="lib"/>
+	<classpathentry kind="src" path="lib/ecpay_invoice"/>
+	<classpathentry excluding="test/" kind="src" path="node_modules/base64-js"/>
+	<classpathentry kind="src" path="node_modules/base64-js/test"/>
+	<classpathentry excluding="test/|test/node/" kind="src" path="node_modules/buffer"/>
+	<classpathentry excluding="node/" kind="src" path="node_modules/buffer/test"/>
+	<classpathentry kind="src" path="node_modules/buffer/test/node"/>
+	<classpathentry excluding="parsers/" kind="src" path="node_modules/elementtree/lib"/>
+	<classpathentry kind="src" path="node_modules/elementtree/lib/parsers"/>
+	<classpathentry kind="src" path="node_modules/elementtree/tests"/>
+	<classpathentry kind="src" path="node_modules/iconv-lite/encodings"/>
+	<classpathentry kind="src" path="node_modules/iconv-lite/lib"/>
+	<classpathentry excluding="test/" kind="src" path="node_modules/ieee754"/>
+	<classpathentry kind="src" path="node_modules/ieee754/test"/>
+	<classpathentry excluding="fp/" kind="src" path="node_modules/lodash"/>
+	<classpathentry kind="src" path="node_modules/lodash/fp"/>
+	<classpathentry kind="src" path="node_modules/sax/lib"/>
+	<classpathentry kind="src" path="node_modules/xml2js/lib"/>
+	<classpathentry kind="src" path="node_modules/xmlbuilder/lib"/>
+	<classpathentry excluding="node_modules/sax/lib/|lib/|examples/|test/" kind="src" path="node_modules/xmldoc"/>
+	<classpathentry kind="src" path="node_modules/xmldoc/examples"/>
+	<classpathentry kind="src" path="node_modules/xmldoc/lib"/>
+	<classpathentry kind="src" path="node_modules/xmldoc/node_modules/sax/lib"/>
+	<classpathentry kind="src" path="node_modules/xmldoc/test"/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

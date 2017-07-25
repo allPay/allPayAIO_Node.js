@@ -1,0 +1,565 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<allPayInvoice>
+  <InvoiceIssue>
+    <ServiceAddress>
+        <url type="Production">https://einvoice.allpay.com.tw/Invoice/Issue</url>
+        <url type="Test">https://einvoice-stage.allpay.com.tw/Invoice/Issue</url>
+    </ServiceAddress>
+    <Config>
+        <switchparam>
+        </switchparam>
+        <optparam>
+        </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="RelateNumber">
+        <pattern>^.{1,30}$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerID">
+        <pattern>^([\w_]{1,20}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerIdentifier">
+        <pattern>^(\d{8}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerName" urlencode="1">
+        <pattern>^.{0,30}$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerAddr" urlencode="1">
+        <pattern>^.{0,200}$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerPhone">
+        <pattern>^(\d{10,20}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerEmail" urlencode="1">
+        <pattern>^.{0,200}$</pattern>
+      </param>
+      <param type="Opt"  require="1" name="ClearanceMark">
+        <option>1</option>
+        <option>2</option>
+        <option></option>
+      </param>
+      <param type="Opt"  require="1" name="Print">
+        <option>0</option>
+        <option>1</option>
+      </param>
+      <param type="Opt"  require="1" name="Donation">
+        <option>1</option>
+        <option>2</option>
+      </param>
+      <param type="String"  require="1" name="LoveCode">
+        <pattern>^([Xx]\d{2,6}|\d{3,7}|)$</pattern>
+      </param>
+      <param type="Opt"  require="1" name="CarruerType">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option></option>
+      </param>
+      <param type="String"  require="1" name="CarruerNum"> <!-- Patten of this column is defined in verification.rb???-->
+      </param>
+      <param type="Opt"  require="1" name="TaxType">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>9</option>
+      </param>
+      <param type="Int" require="1" name="SalesAmount">
+        <mode>GE</mode> <!--BETWEEN, GE, LE, EXCLUDE  -->
+        <maximum></maximum>
+        <minimal>1</minimal>
+      </param>
+      <param type="String"  require="1" name="InvoiceRemark" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemName" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemCount">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemWord" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemPrice">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemTaxType">
+        <pattern>^([1-3\|]{0,4096}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemAmount">
+        <pattern>^[\d\|\.]{0,4096}$</pattern>
+      </param>
+      <param type="String" require="1" name="ItemRemark" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="Opt"  require="1" name="InvType">
+        <option>07</option>
+        <option>08</option>
+      </param>
+      <param type="Opt" require="1" name="vat">
+        <option>0</option>
+        <option>1</option>
+      </param>
+    </Parameters>
+  </InvoiceIssue>
+  <InvoiceDelayIssue>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Invoice/DelayIssue</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Invoice/DelayIssue</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="RelateNumber">
+        <pattern>^.{1,30}$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerID">
+        <pattern>^([\w_]{1,20}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerIdentifier">
+        <pattern>^(\d{8}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerName" urlencode="1">
+        <pattern>^.{0,30}$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerAddr" urlencode="1">
+        <pattern>^.{0,200}$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerPhone">
+        <pattern>^(\d{10,20}|)$</pattern>
+      </param>
+      <param type="String"  require="1" name="CustomerEmail" urlencode="1">
+        <pattern>^.{0,200}$</pattern>
+      </param>
+      <param type="Opt"  require="1" name="ClearanceMark">
+        <option>1</option>
+        <option>2</option>
+        <option></option>
+      </param>
+      <param type="Opt"  require="1" name="Print">
+        <option>0</option>
+        <option>1</option>
+      </param>
+      <param type="Opt"  require="1" name="Donation">
+        <option>1</option>
+        <option>2</option>
+      </param>
+      <param type="String"  require="1" name="LoveCode">
+        <pattern>^([Xx]\d{2,6}|\d{3,7}|)$</pattern>
+      </param>
+      <param type="Opt"  require="1" name="CarruerType">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option></option>
+      </param>
+      <param type="String"  require="1" name="CarruerNum"> <!-- Patten of this column is defined in verification.rb???-->
+      </param>
+      <param type="Opt"  require="1" name="TaxType">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>9</option>
+      </param>
+      <param type="Int" require="1" name="SalesAmount">
+        <mode>GE</mode> <!--BETWEEN, GE, LE, EXCLUDE  -->
+        <maximum></maximum>
+        <minimal>1</minimal>
+      </param>
+      <param type="String"  require="1" name="InvoiceRemark" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemName" urlencode="1">
+        <pattern>^.{0,4096}$$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemCount">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemWord" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemPrice">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemTaxType">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemAmount">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="Opt"  require="1" name="InvType">
+        <option>07</option>
+        <option>08</option>
+      </param>
+      <param type="Opt" require="1" name="DelayFlag">
+        <option>1</option>
+        <option>2</option>
+      </param>
+      <param type="String" require="1" name="DelayDay">
+        <pattern>^\d{1,15}$</pattern>
+      </param>
+      <param type="String" require="1" name="Tsr">
+        <pattern>^.{1,30}$</pattern>
+      </param>
+      <param type="String" require="1" name="PayType">
+        <pattern>^[3]$</pattern>
+      </param>
+      <param type="String" require="1" name="PayAct">
+        <pattern>^ALLPAY$</pattern>
+      </param>
+      <param type="String" require="1" name="NotifyURL">
+        <pattern>^.{0,200}$</pattern>
+      </param>
+    </Parameters>
+  </InvoiceDelayIssue>
+  <InvoiceTriggerIssue>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Invoice/TriggerIssue</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Invoice/TriggerIssue</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String" require="1" name="Tsr">
+        <pattern>^.{1,30}$</pattern>
+      </param>
+      <param type="String" require="1" name="PayType">
+        <pattern>^[3]$</pattern>
+      </param>
+    </Parameters>
+  </InvoiceTriggerIssue>
+  <InvoiceAllowance>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Invoice/Allowance</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Invoice/Allowance</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="InvoiceNo">
+        <pattern>^[A-Z]{2}\d{8}$</pattern>
+      </param>
+      <param type="Opt" require="1" name="AllowanceNotify">
+        <option>S</option>
+        <option>E</option>
+        <option>A</option>
+        <option>N</option>
+      </param>
+      <param type="String"  require="1" name="CustomerName" urlencode="1">
+        <pattern>^.{0,30}$</pattern>
+      </param>
+      <param type="String"  require="1" name="NotifyMail" urlencode="1">
+        <pattern>^.{0,100}$</pattern>
+      </param>
+      <param type="String"  require="1" name="NotifyPhone">
+        <pattern>^(\d{10,20}|)$</pattern>
+      </param>
+      <param type="Int" require="1" name="AllowanceAmount">
+        <mode>GE</mode> <!--BETWEEN, GE, LE, EXCLUDE  -->
+        <maximum></maximum>
+        <minimal>1</minimal>
+      </param>
+      <param type="String"  require="1" name="ItemName" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemCount">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemWord" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemPrice">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemTaxType">
+        <pattern>^.{0,4096}$$</pattern>
+      </param>
+      <param type="String"  require="1" name="ItemAmount">
+        <pattern>^[\d\|]{0,4096}$</pattern>
+      </param>
+    </Parameters>
+  </InvoiceAllowance>
+  <InvoiceIssueInvalid>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Invoice/IssueInvalid</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Invoice/IssueInvalid</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="InvoiceNumber">
+        <pattern>^[A-Z]{2}\d{8}$</pattern>
+      </param>
+      <param type="String"  require="1" name="Reason" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+    </Parameters>
+  </InvoiceIssueInvalid>
+  <InvoiceAllowanceInvalid>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Invoice/AllowanceInvalid</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Invoice/AllowanceInvalid</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="InvoiceNo">
+        <pattern>^[A-Z]{2}\d{8}$</pattern>
+      </param>
+      <param type="String"  require="1" name="AllowanceNo">
+        <pattern>^\d{16}$</pattern>
+      </param>
+      <param type="String"  require="1" name="Reason" urlencode="1">
+        <pattern>^.{0,4096}$</pattern>
+      </param>
+    </Parameters>
+  </InvoiceAllowanceInvalid>
+  <QueryIssue>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Query/Issue</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Query/Issue</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="RelateNumber">
+        <pattern>^.{0,30}$</pattern>
+      </param>
+    </Parameters>
+  </QueryIssue>
+  <QueryAllowance>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Query/Allowance</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Query/Allowance</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="InvoiceNo">
+        <pattern>^[A-Z]{2}\d{8}$</pattern>
+      </param>
+      <param type="String"  require="1" name="AllowanceNo">
+        <pattern>^\d{16}$</pattern>
+      </param>
+    </Parameters>
+  </QueryAllowance>
+  <QueryIssueInvalid>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Query/IssueInvalid</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Query/IssueInvalid</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="RelateNumber">
+        <pattern>^.{0,30}$</pattern>
+      </param>
+    </Parameters>
+  </QueryIssueInvalid>
+  <QueryAllowanceInvalid>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Query/AllowanceInvalid</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Query/AllowanceInvalid</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param type="String"  require="1" name="InvoiceNo">
+        <pattern>^[A-Z]{2}\d{8}$</pattern>
+      </param>
+      <param type="String"  require="1" name="AllowanceNo">
+        <pattern>^\d{16}$</pattern>
+      </param>
+    </Parameters>
+  </QueryAllowanceInvalid>
+  <CheckMobileBarCode>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Query/CheckMobileBarCode</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Query/CheckMobileBarCode</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="BarCode">
+        <pattern>^\/[A-Za-z0-9\ \-\+]{7}$</pattern>
+      </param>
+    </Parameters>
+  </CheckMobileBarCode>
+  <CheckLoveCode>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Query/CheckLoveCode</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Query/CheckLoveCode</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="LoveCode">
+        <pattern>^([Xx]\d{2,6}|\d{3,7})$</pattern>
+      </param>
+    </Parameters>
+  </CheckLoveCode>
+  <InvoiceNotify>
+    <ServiceAddress>
+      <url type="Production">https://einvoice.allpay.com.tw/Notify/InvoiceNotify</url>
+      <url type="Test">https://einvoice-stage.allpay.com.tw/Notify/InvoiceNotify</url>
+    </ServiceAddress>
+    <Config>
+      <switchparam>
+      </switchparam>
+      <optparam>
+      </optparam>
+    </Config>
+    <Parameters>
+      <param  type="String"  require="1" name="TimeStamp">
+        <pattern>^\d{10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="MerchantID">
+        <pattern>^\d{7,10}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="InvoiceNo">
+        <pattern>^[A-Z]{2}\d{8}$</pattern>
+      </param>
+      <param  type="String"  require="1" name="AllowanceNo"><!-- Patten of this column is defined in verification.rb???-->
+      </param>
+      <param  type="String"  require="1" name="Phone">
+        <pattern>^(\d{10,20}|)$</pattern>
+      </param>
+      <param  type="String"  require="1" name="NotifyMail" urlencode="1">
+        <pattern>^.{0,80}$</pattern>
+      </param>
+      <param  type="Opt"  require="1" name="Notify">
+        <option>S</option>
+        <option>E</option>
+        <option>A</option>
+      </param>
+      <param  type="Opt"  require="1" name="InvoiceTag">
+        <option>I</option>
+        <option>II</option>
+        <option>A</option>
+        <option>AI</option>
+        <option>AW</option>
+      </param>
+      <param  type="Opt"  require="1" name="Notified">
+        <option>C</option>
+        <option>M</option>
+        <option>A</option>
+      </param>
+    </Parameters>
+  </InvoiceNotify>
+</allPayInvoice>

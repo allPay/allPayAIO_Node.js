@@ -1,0 +1,29 @@
+<?xml  version="1.0" encoding="utf-8"?>
+<Conf>
+    <OperatingMode>Test</OperatingMode> <!--Test or Production-->
+    <MercProfile>Stage_Account</MercProfile>
+    <IsProjectContractor>N</IsProjectContractor>
+
+    <MerchantInfo>
+        <MInfo name="Production_Account">
+            <MerchantID></MerchantID>
+            <HashKey></HashKey>
+            <HashIV></HashIV>
+        </MInfo>
+        <MInfo name="Stage_Account">
+            <MerchantID>2000132</MerchantID>
+            <HashKey>ejCk326UnaZWKisg</HashKey>
+            <HashIV>q9jcZX8Ib9LM8wYK</HashIV>
+        </MInfo>
+    </MerchantInfo>
+
+    <IgnorePayment>
+<!--        <Method>Credit</Method>
+        <Method>WebATM</Method>
+        <Method>ATM</Method>
+        <Method>CVS</Method>
+        <Method>Tenpay</Method>
+        <Method>TopUpUsed</Method>-->
+    </IgnorePayment>
+
+</Conf>
